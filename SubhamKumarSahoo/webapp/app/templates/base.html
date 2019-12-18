@@ -62,6 +62,26 @@ footer {
   
 </div>
 
+<div style="width: 640px; height: 480px" id="mapContainer"></div>
+<script>
+      // Initialize the platform object:
+      var platform = new H.service.Platform({
+        'apikey': '{ZcdItQEQbwtgxGo2hOGRtI2FCSsxqGW_rNcss7LmGSI}'
+      });
+
+      // Obtain the default map types from the platform object
+      var maptypes = platform.createDefaultLayers();
+
+      // Instantiate (and display) a map object:
+      var map = new H.Map(
+        document.getElementById('mapContainer'),
+        maptypes.vector.normal.map,
+        {
+          zoom: 10,
+          center: { lng: 52.5, lat: 13.4 }
+        });
+ </script>
+
 <footer>
   <p>By Subham Kumar Sahoo (Team 12 IncubateInd)<br>
      Thank you Kashish Madam :)
