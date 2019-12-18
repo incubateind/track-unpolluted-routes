@@ -1,0 +1,35 @@
+
+{% block content %}
+    {{ name }}
+    <h1>Search:</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.departure.label }}<br>
+            {{ form.departure(size=32) }}<br>
+            {% for error in form.departure.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.arrival.label }}<br>
+            {{ form.arrival(size=32) }}<br>
+            {% for error in form.arrival.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+    
+    ID: {{ uid }}
+
+    {% for t in transports %}
+
+    Id: {{ t.id }} | Type: {{ t.type }} | Departure time: {{ t.dep_time }} | Green Point: {{ t.green_point }} |
+    <a href="{{ url_for('booked', gp=t.green_point,uid=userid) }}">Book</a>
+    <br><br>
+
+    {% endfor %}
+
+{% endblock %}

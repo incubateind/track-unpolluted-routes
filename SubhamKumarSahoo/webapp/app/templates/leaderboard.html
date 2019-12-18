@@ -1,0 +1,45 @@
+
+<html>
+    <head>
+        <title>OSM-Swecha  Leaderboard</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="static/css/skeleton.css">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+<script src="app.js"></script>
+
+</head>
+<body>
+        <div class="container">
+        <h4 style="text-align: center">Green Leaderboard</h4>
+        <a href="{{ url_for('index', id=id1) }}">BACK</a><br>
+        
+        <center>
+        <table>
+            <thead>
+                <tr>
+                    <th>USER-ID</th>
+                    <th>GREEN POINTS</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for q in query %}
+                <tr>
+                    <td>{{ q.id }}</td>
+                    <td>{{ q.green_points }}</td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </center>
+        </div>
+    </body>
+</html>
+
+<!--
+{% for q in query %}
+ID:{{ q.id }} => NAME:{{ q.username }} =>PTS:{{ q.green_points }}<br>
+{% endfor %}
+-->
