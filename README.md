@@ -1,4 +1,4 @@
-# Tracking user's carbon footprints and suggesting the unpolluted routes 🌲👣🌳
+# Tracking user's carbon footprints and suggesting the unpolluted routes 🌲
 
 ## Team 12 Mobility Developer Tech Camp 2019
 
